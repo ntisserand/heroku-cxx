@@ -1,4 +1,4 @@
-#!/usr/bin/env bash -e
+#!/usr/bin/env -- bash -e
 
 # bin/compile <build-dir> <cache-dir> <env-file>
 
