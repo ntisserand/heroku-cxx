@@ -16,7 +16,7 @@ pwd; ls -la
 
 if [ -f "Makefile" ]; then
     echo "-----> Makefile found"
-    make
+    make CACHE_DIR=$CACHE_DIR
     echo "-----> Compilation done"
 else
     echo "-----> No Makefile found.Compilation cannot continue."
