@@ -1,0 +1,14 @@
+prefix=/home/nt/Qt5.1.1/5.1.1/gcc_64
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+
+Name: Qt5 Network
+Description: Qt Network module
+Version: 5.1.1
+Libs: -L${libdir} -lQt5Network 
+Libs.private: 
+Cflags: -I${includedir}/QtNetwork -I${includedir}
+Requires: Qt5Core
+
