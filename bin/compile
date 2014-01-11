@@ -2,6 +2,12 @@
 
 # bin/compile <build-dir> <cache-dir>
 
+debug_dir ()
+{
+    echo Directory: $1=$2
+    ls -la $2
+}
+
 set -e
 
 BUILD_DIR=$1
@@ -16,7 +22,12 @@ pwd; ls -la
 
 if [ -f "Makefile" ]; then
     echo "-----> Makefile found"
+
+    debug_dir BUILD_DIR ${BUILD_DIR}
+    debug_dir CACHE_DIR ${CACHE_DIR}
+
     make CACHE_DIR=$CACHE_DIR
+
     echo "-----> Compilation done"
 else
     echo "-----> No Makefile found.Compilation cannot continue."
