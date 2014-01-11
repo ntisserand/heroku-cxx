@@ -4,8 +4,9 @@
 
 dir_var ()
 {
-    echo Directory: $1=${$1}
-    ls -la ${$1}
+    dir_path=`eval \${$1}`
+    echo Directory: $1=$dir_path
+    ls -la $dir_path
 }
 
 print ()
