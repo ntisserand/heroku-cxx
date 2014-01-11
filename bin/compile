@@ -1,35 +1,41 @@
-#!/usr/bin/env bash
+#!/usr/bin/env bash -e
 
-# bin/compile <build-dir> <cache-dir>
+# bin/compile <build-dir> <cache-dir> <env-file>
 
-debug_dir ()
+dir_var ()
 {
-    echo Directory: $1=$2
-    ls -la $2
+    echo Directory: $1=${$1}
+    ls -la ${$1}
 }
 
-set -e
+print ()
+{
+    echo "-----> "$*
+}
 
-BUILD_DIR=$1
-CACHE_DIR=$2
-LP_DIR=`cd $(dirname $0); cd ..; pwd`
+APP_BUILD_DIR=$1
+APP_CACHE_DIR=$2
+BUILDPACK_DIR=`cd $(dirname $0); cd ..; pwd`
 
-pwd; ls -la
+dir_var APP_BUILD_DIR
+dir_var APP_CACHE_DIR
+dir_var BUILDPACK_DIR
 
-cd $BUILD_DIR
+mkdir -p $APP_CACHE_DIR
 
-pwd; ls -la
+cd $APP_CACHE_DIR
+    ln -sf $BUILD_PACK_DIR/bin
+    ln -sf $BUILD_PACK_DIR/include
+    ln -sf $BUILD_PACK_DIR/lib
+cd -
 
-if [ -f "Makefile" ]; then
-    echo "-----> Makefile found"
-
-    debug_dir BUILD_DIR ${BUILD_DIR}
-    debug_dir CACHE_DIR ${CACHE_DIR}
-
-    make CACHE_DIR=$CACHE_DIR
-
-    echo "-----> Compilation done"
-else
-    echo "-----> No Makefile found.Compilation cannot continue."
-    exit 1
-fi
+cd $APP_BUILD_DIR
+    if [ -f "Makefile" ]; then
+        report "Makefile found."
+        make CACHE_DIR=$CACHE_DIR
+        report "Compilation successful."
+    else
+        report "Error: No Makefile found."
+        exit 1
+    fi
+cd -
