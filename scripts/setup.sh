@@ -1,4 +1,4 @@
-#!/bin/sh -ex
+#!/bin/sh -e
 
 # setup.sh <build-dir> <cache-dir> <env-file>
 

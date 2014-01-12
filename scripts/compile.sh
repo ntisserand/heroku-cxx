@@ -1,4 +1,4 @@
-#!/bin/sh -ex
+#!/bin/sh -e
 
 # compile.sh <build-dir> <cache-dir> <env-file>
 
