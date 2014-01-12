@@ -29,9 +29,9 @@ dir_var BUILDPACK_DIR
 mkdir -p $APP_CACHE_DIR
 
 cd $APP_CACHE_DIR
-    ln -sf $BUILD_PACK_DIR/bin
-    ln -sf $BUILD_PACK_DIR/include
-    ln -sf $BUILD_PACK_DIR/lib
+    ln -sf $BUILDPACK_DIR/bin
+    ln -sf $BUILDPACK_DIR/include
+    ln -sf $BUILDPACK_DIR/lib
 cd -
 
 cd $APP_BUILD_DIR
