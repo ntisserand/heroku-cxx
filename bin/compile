@@ -9,7 +9,7 @@ dir_var ()
     if [ -f "Makefile" ]; then
         ls -la $dir_path
     else
-        echo <non-existent>
+        echo "<non-existent>"
     fi
 }
 
