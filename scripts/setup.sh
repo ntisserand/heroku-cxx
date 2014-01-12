@@ -14,9 +14,3 @@ cd $APP_CACHE_DIR
     ln -sf $BUILDPACK_DIR/headers
     ln -sf $BUILDPACK_DIR/libraries
 cd -
-
-cd $APP_CACHE_DIR/libraries
-    for iculib in i18n uc ucdata; do
-        ln -s libicu$iculib.so.51 libicu$iculib.so
-    done
-cd -
