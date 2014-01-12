@@ -2,8 +2,8 @@
 
 # release.sh <build-dir>
 
-BUILDPACK_DIR=`cd $(dirname $0); cd ..; pwd`; . $BUILDPACK_DIR/scripts/functions.sh
-APP_BUILD_DIR=$1
+#BUILDPACK_DIR=`cd $(dirname $0); cd ..; pwd`; . $BUILDPACK_DIR/scripts/functions.sh
+#APP_BUILD_DIR=$1
 
 #-------------------------------------------------------------------------------
 
