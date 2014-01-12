@@ -10,7 +10,7 @@ dir_var () # dir
 {
     eval "dir_path=\${$1}"
     echo Directory: $1=$dir_path
-    if [ -f "Makefile" ]; then
+    if [ -f $dir_path ]; then
         ls -la $dir_path
     else
         echo "<non-existent>"
