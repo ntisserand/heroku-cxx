@@ -11,6 +11,8 @@ APP_CACHE_DIR=$2
 mkdir -p $APP_CACHE_DIR
 
 cd $APP_CACHE_DIR
-    ln -sf $BUILDPACK_DIR/headers
-    ln -sf $BUILDPACK_DIR/libraries
+#    ln -sf $BUILDPACK_DIR/headers
+#    ln -sf $BUILDPACK_DIR/libraries
+    rsync -av $BUILDPACK_DIR/headers/   ./headers/
+    rsync -av $BUILDPACK_DIR/libraries/ ./libraries/
 cd -
