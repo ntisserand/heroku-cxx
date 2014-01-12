@@ -8,6 +8,10 @@ APP_CACHE_DIR=$2
 
 #-------------------------------------------------------------------------------
 
+dir_var BUILDPACK_DIR
+dir_var APP_BUILD_DIR
+dir_var APP_CACHE_DIR
+
 # Setup
 $BUILDPACK_DIR/scripts/setup.sh $APP_BUILD_DIR $APP_CACHE_DIR
 
@@ -25,3 +29,7 @@ cd $APP_BUILD_DIR
         exit 1
     fi
 cd -
+
+dir_var BUILDPACK_DIR
+dir_var APP_BUILD_DIR
+dir_var APP_CACHE_DIR
