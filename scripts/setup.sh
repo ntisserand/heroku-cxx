@@ -8,15 +8,19 @@ APP_CACHE_DIR=$2
 
 #-------------------------------------------------------------------------------
 
-buildpack_dir () # dir
+runtime_dir () # dir
 {
     rm -rf $1
     cp -a $BUILDPACK_DIR/$1 ./
 }
 
-mkdir -p $APP_CACHE_DIR
+#mkdir -p $APP_CACHE_DIR
 
-cd $APP_CACHE_DIR
-    buildpack_dir headers
-    buildpack_dir libraries
+#cd $APP_CACHE_DIR
+#    runtime_dir libraries
+#cd -
+
+
+cd $APP_BUILD_DIR
+    runtime_dir libraries
 cd -

@@ -15,7 +15,10 @@ $BUILDPACK_DIR/scripts/setup.sh $APP_BUILD_DIR $APP_CACHE_DIR
 cd $APP_BUILD_DIR
     if [ -f "Makefile" ]; then
         report "Makefile found."
-        make APP_CACHE_DIR=$APP_CACHE_DIR
+        make                             \
+            BUILDPACK_DIR=$BUILDPACK_DIR \
+            APP_CACHE_DIR=$APP_CACHE_DIR \
+            APP_BUILD_DIR=$APP_BUILD_DIR
         report "Compilation successful."
     else
         report "Error: No Makefile found."
