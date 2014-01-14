@@ -21,3 +21,15 @@ report ()
 {
     echo "-----> "$*
 }
+
+app_cache_dir () # path
+{
+    rm -f $APP_CACHE_DIR/$1
+    cp -a $BUILDPACK_DIR/$1 $APP_CACHE_DIR/
+}
+
+app_build_dir () # poth
+{
+    rm -rf $APP_BUILD_DIR/$1
+    cp -a  $BUILDPACK_DIR/$1 $APP_BUILD_DIR/
+}
