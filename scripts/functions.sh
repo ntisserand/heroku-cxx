@@ -10,7 +10,7 @@
 
 dir_var () # dir
 {
-    if [ !$DEBUG ]; then return; end
+    if [ !$DEBUG ]; then return; fi
 
     eval "dir_path=\${$1}"
     echo Directory: $1=$dir_path
