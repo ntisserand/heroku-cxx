@@ -6,8 +6,12 @@
 #
 #-------------------------------------------------------------------------------
 
+#DEBUG=1
+
 dir_var () # dir
 {
+    if [ !$DEBUG ]; then; return; end
+
     eval "dir_path=\${$1}"
     echo Directory: $1=$dir_path
     if [ -f $dir_path ]; then
