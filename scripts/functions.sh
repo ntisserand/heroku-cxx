@@ -28,8 +28,8 @@ report ()
 
 app_cache_dir () # path
 {
-    rm -f $APP_CACHE_DIR/$1
-    cp -a $BUILDPACK_DIR/$1 $APP_CACHE_DIR/
+    rm -rf $APP_CACHE_DIR/$1
+    cp -a  $BUILDPACK_DIR/$1 $APP_CACHE_DIR/
 }
 
 app_build_dir () # poth

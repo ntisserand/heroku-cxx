@@ -8,4 +8,6 @@
 
 ## Optional
 
+	$ heroku labs:enable buildpack-env-arg
+	$ heroku labs:enable websockets
 	$ heroku plugins:install https://github.com/heroku/heroku-repo.git
